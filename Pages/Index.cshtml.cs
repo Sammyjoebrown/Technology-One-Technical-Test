@@ -9,17 +9,18 @@ namespace Technology_One_Technical_Test.Pages
 
         // Testing displaying text on the web page that is set in the C# code
         public string Test { get; set; }
+        public string Output { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
-            // Initialize the Test property
-            Test = "Hello";
+            Test = "Hey - I'm made in the C# code!";
+            Output = "This is the output from the C# code";
         }
 
         public void OnGet()
         {
-            
+
         }
     }
 }
