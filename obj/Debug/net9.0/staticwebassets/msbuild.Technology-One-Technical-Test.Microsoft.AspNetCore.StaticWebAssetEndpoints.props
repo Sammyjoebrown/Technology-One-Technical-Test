@@ -756,6 +756,30 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1117"},{"Name":"Content-Type","Value":"text/plain"},{"Name":"ETag","Value":"\u0022hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk=\u0022"},{"Name":"Last-Modified","Value":"Mon, 18 Nov 2024 14:11:00 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Technology-One-Technical-Test/sjb.4cd0n913jd.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sjb.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"4cd0n913jd"},{"Name":"integrity","Value":"sha256-fLHh6RHwuT\u002B/30TOSFiTKPSMaMizxiZ\u002BuE8gBrtntf4="},{"Name":"label","Value":"_content/Technology-One-Technical-Test/sjb.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"45321"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022fLHh6RHwuT\u002B/30TOSFiTKPSMaMizxiZ\u002BuE8gBrtntf4=\u0022"},{"Name":"Last-Modified","Value":"Mon, 18 Nov 2024 13:56:38 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Technology-One-Technical-Test/sjb.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sjb.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-fLHh6RHwuT\u002B/30TOSFiTKPSMaMizxiZ\u002BuE8gBrtntf4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"45321"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022fLHh6RHwuT\u002B/30TOSFiTKPSMaMizxiZ\u002BuE8gBrtntf4=\u0022"},{"Name":"Last-Modified","Value":"Mon, 18 Nov 2024 13:56:38 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Technology-One-Technical-Test/t1.g7367vv6it.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\t1.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"g7367vv6it"},{"Name":"integrity","Value":"sha256-RPcPPI7rnJbrra1XLTnT72IiBvsRb\u002BBfKEN3uVRUAic="},{"Name":"label","Value":"_content/Technology-One-Technical-Test/t1.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"15027"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022RPcPPI7rnJbrra1XLTnT72IiBvsRb\u002BBfKEN3uVRUAic=\u0022"},{"Name":"Last-Modified","Value":"Mon, 18 Nov 2024 13:40:51 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Technology-One-Technical-Test/t1.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\t1.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-RPcPPI7rnJbrra1XLTnT72IiBvsRb\u002BBfKEN3uVRUAic="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"15027"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022RPcPPI7rnJbrra1XLTnT72IiBvsRb\u002BBfKEN3uVRUAic=\u0022"},{"Name":"Last-Modified","Value":"Mon, 18 Nov 2024 13:40:51 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Technology-One-Technical-Test/Technology-One-Technical-Test.3pcn13xsv1.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Technology-One-Technical-Test.3pcn13xsv1.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

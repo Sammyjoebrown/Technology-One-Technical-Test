@@ -1,19 +1,25 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Technology_One_Technical_Test.Pages;
-
-public class IndexModel : PageModel
+namespace Technology_One_Technical_Test.Pages
 {
-    private readonly ILogger<IndexModel> _logger;
-
-    public IndexModel(ILogger<IndexModel> logger)
+    public class IndexModel : PageModel
     {
-        _logger = logger;
-    }
+        private readonly ILogger<IndexModel> _logger;
 
-    public void OnGet()
-    {
+        // Testing displaying text on the web page that is set in the C# code
+        public string Test { get; set; }
 
+        public IndexModel(ILogger<IndexModel> logger)
+        {
+            _logger = logger;
+            // Initialize the Test property
+            Test = "Hello";
+        }
+
+        public void OnGet()
+        {
+            
+        }
     }
 }

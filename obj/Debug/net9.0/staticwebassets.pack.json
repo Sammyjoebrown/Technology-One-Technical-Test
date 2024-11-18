@@ -257,6 +257,14 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
     },
     {
+      "Id": "C:\\Users\\Sammy B\\Desktop\\Technology One\\Technology One Technical Test\\Technology-One-Technical-Test\\wwwroot\\sjb.png",
+      "PackagePath": "staticwebassets\\sjb.png"
+    },
+    {
+      "Id": "C:\\Users\\Sammy B\\Desktop\\Technology One\\Technology One Technical Test\\Technology-One-Technical-Test\\wwwroot\\t1.png",
+      "PackagePath": "staticwebassets\\t1.png"
+    },
+    {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.Technology-One-Technical-Test.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

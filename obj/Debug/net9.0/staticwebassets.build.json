@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TJ84JhXJ0mqNCTiWfmHQw/ZLqfOzrr/p6sTSKTAlvQk=",
+  "Hash": "toIvbtMMI8gZCg3OV5pF6M3fZIOHYrP31DPb8Rl7zf0=",
   "Source": "Technology-One-Technical-Test",
   "BasePath": "_content/Technology-One-Technical-Test",
   "Mode": "Default",
@@ -2724,6 +2724,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Sammy B\\Desktop\\Technology One\\Technology One Technical Test\\Technology-One-Technical-Test\\wwwroot\\sjb.png",
+      "SourceId": "Technology-One-Technical-Test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Sammy B\\Desktop\\Technology One\\Technology One Technical Test\\Technology-One-Technical-Test\\wwwroot\\",
+      "BasePath": "_content/Technology-One-Technical-Test",
+      "RelativePath": "sjb#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4cd0n913jd",
+      "Integrity": "fLHh6RHwuT+/30TOSFiTKPSMaMizxiZ+uE8gBrtntf4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\sjb.png"
+    },
+    {
+      "Identity": "C:\\Users\\Sammy B\\Desktop\\Technology One\\Technology One Technical Test\\Technology-One-Technical-Test\\wwwroot\\t1.png",
+      "SourceId": "Technology-One-Technical-Test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Sammy B\\Desktop\\Technology One\\Technology One Technical Test\\Technology-One-Technical-Test\\wwwroot\\",
+      "BasePath": "_content/Technology-One-Technical-Test",
+      "RelativePath": "t1#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "g7367vv6it",
+      "Integrity": "RPcPPI7rnJbrra1XLTnT72IiBvsRb+BfKEN3uVRUAic=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\t1.png"
     }
   ],
   "Endpoints": [
@@ -21282,6 +21324,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-JKWeHUaANNuffeRatdc54UCb84RoxjEw/nTq8Mops8Y="
+        }
+      ]
+    },
+    {
+      "Route": "sjb.4cd0n913jd.png",
+      "AssetFile": "C:\\Users\\Sammy B\\Desktop\\Technology One\\Technology One Technical Test\\Technology-One-Technical-Test\\wwwroot\\sjb.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "45321"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fLHh6RHwuT+/30TOSFiTKPSMaMizxiZ+uE8gBrtntf4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 18 Nov 2024 13:56:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4cd0n913jd"
+        },
+        {
+          "Name": "label",
+          "Value": "sjb.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fLHh6RHwuT+/30TOSFiTKPSMaMizxiZ+uE8gBrtntf4="
+        }
+      ]
+    },
+    {
+      "Route": "sjb.png",
+      "AssetFile": "C:\\Users\\Sammy B\\Desktop\\Technology One\\Technology One Technical Test\\Technology-One-Technical-Test\\wwwroot\\sjb.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "45321"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fLHh6RHwuT+/30TOSFiTKPSMaMizxiZ+uE8gBrtntf4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 18 Nov 2024 13:56:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fLHh6RHwuT+/30TOSFiTKPSMaMizxiZ+uE8gBrtntf4="
+        }
+      ]
+    },
+    {
+      "Route": "t1.g7367vv6it.png",
+      "AssetFile": "C:\\Users\\Sammy B\\Desktop\\Technology One\\Technology One Technical Test\\Technology-One-Technical-Test\\wwwroot\\t1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15027"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RPcPPI7rnJbrra1XLTnT72IiBvsRb+BfKEN3uVRUAic=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 18 Nov 2024 13:40:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "g7367vv6it"
+        },
+        {
+          "Name": "label",
+          "Value": "t1.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RPcPPI7rnJbrra1XLTnT72IiBvsRb+BfKEN3uVRUAic="
+        }
+      ]
+    },
+    {
+      "Route": "t1.png",
+      "AssetFile": "C:\\Users\\Sammy B\\Desktop\\Technology One\\Technology One Technical Test\\Technology-One-Technical-Test\\wwwroot\\t1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15027"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RPcPPI7rnJbrra1XLTnT72IiBvsRb+BfKEN3uVRUAic=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 18 Nov 2024 13:40:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RPcPPI7rnJbrra1XLTnT72IiBvsRb+BfKEN3uVRUAic="
         }
       ]
     },
