@@ -10,6 +10,7 @@ namespace Technology_One_Technical_Test.Pages
         // Testing displaying text on the web page that is set in the C# code
         public string Test { get; set; }
         public string Output { get; set; }
+        public string Input { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -20,7 +21,13 @@ namespace Technology_One_Technical_Test.Pages
 
         public void OnGet()
         {
+            // Nothing to auto-get
+        }
 
+        public void OnPost()
+        {
+            Input = Request.Form["Input"];
+            Output = "You entered: " + Input;
         }
     }
 }
