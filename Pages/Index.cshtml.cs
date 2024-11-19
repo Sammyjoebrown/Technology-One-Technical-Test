@@ -11,6 +11,7 @@ namespace Technology_One_Technical_Test.Pages
         public string Test { get; set; }
         public string Output { get; set; }
         public string Input { get; set; }
+        public string ConversionType { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -27,6 +28,7 @@ namespace Technology_One_Technical_Test.Pages
         public void OnPost()
         {
             Input = Request.Form["Input"];
+            ConversionType = Request.Form["ConversionType"];
 
             // Validation stages
             // Check if input can be parsed as float - else error
@@ -40,7 +42,31 @@ namespace Technology_One_Technical_Test.Pages
 
             // A very rough outline of how I would approach the problem (it's only day 1 after all)
 
-            Output = "You entered: " + Input;
+            string[] large_numbers = { "hundred", "thousand", "million" };
+            string[] medium_ty_numbers = { "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" };
+            string[] medium_teen_numbers = { "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
+            string[] small_numbers = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+
+            if (float.TryParse(Input, out float InputProcessing)) {
+
+                Int64 Input_length = InputProcessing.ToString().Length;
+
+                /*if (Input_processing.ToString().Contains(".")) {
+                    string[] Input_split = Input_processing.ToString().Split(".");
+                    string Input_dollars = Input_split[0];
+                    string Input_cents = Input_split[1];
+
+                    Output = "Number is a float - " + Input_dollars + " - Size - " + Input_length + " - Cents - " + Input_cents;
+                } else {
+                    Output = "Number is a float - " + Input_processing + " - Size - " + Input_length;
+                }*/
+
+                Output  = "Number is a float - " + InputProcessing + " - Size - " + Input_length + " - Type - " + ConversionType;
+
+            } else {
+                Output = "Number is not a float - " + InputProcessing + " - Size - " + InputProcessing.ToString().Length + " - Type - " + ConversionType;
+            }
+
         }
     }
 }
