@@ -37,29 +37,59 @@ namespace Technology_One_Technical_Test.Pages
             // Set three arrays - one for big numbers (hundreds, thousands, millions), one for medium numbers (teens) and one for small numbers (ones)
             // Iterate through the string, adding the appropriate number to the output string
             // Set rules for after every hundred, there should be an and
-            // If the number is a dollar amount, add the word dollars to the end, and cents for the decimal part
-            // If the number is a regular number, add the point to the end if there is a decimal part 
+            // If the number is a dollar amount, add the word dollars to the end, and cents to the very end for the decimal part (should be done after calculation)
+            // If the number is a regular number, add the point to the end if there is a decimal part (should be done after calculation)
 
             // A very rough outline of how I would approach the problem (it's only day 1 after all)
-
-            string[] large_numbers = { "hundred", "thousand", "million" };
+            string Output;
+            string[] large_numbers = { "hundred", "thousand", "million", "billion", "trillion" };
             string[] medium_ty_numbers = { "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" };
             string[] medium_teen_numbers = { "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
             string[] small_numbers = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
 
             if (float.TryParse(Input, out float InputProcessing)) {
+                
+                // Get length of input
+                int Input_length = InputProcessing.ToString().Length;
+                string InputBeforePoint;
+                int InputBeforePointLength;
+                string InputAfterPoint;
+                int InputAfterPointLength;
 
-                Int64 Input_length = InputProcessing.ToString().Length;
+                // If input contains . , split into parts
+                if (InputProcessing.ToString().Contains(".")) {
+                    string[] InputSplit = InputProcessing.ToString().Split(".");
+                    InputBeforePoint = InputSplit[0];
+                    InputBeforePointLength = InputBeforePoint.Length;
+                    InputAfterPoint = InputSplit[1];
+                    InputAfterPointLength = InputAfterPoint.Length;
+                } 
+                else {
+                    InputBeforePoint = InputProcessing.ToString();
+                    InputBeforePointLength = InputBeforePoint.Length;
+                    InputAfterPoint = "";
+                    InputAfterPointLength = 0;
+                }
 
-                /*if (Input_processing.ToString().Contains(".")) {
-                    string[] Input_split = Input_processing.ToString().Split(".");
-                    string Input_dollars = Input_split[0];
-                    string Input_cents = Input_split[1];
+                int counter = InputBeforePointLength;
+                int[] InputBeforePointArray = new int[InputBeforePointLength];
+                
+                // Split before point into parts of 3 numbers each
+                for (int i = 0; i < InputBeforePointLength; i++) {
+                    
+                    InputBeforePointArray[i] = int.Parse(InputBeforePoint[i].ToString());
 
-                    Output = "Number is a float - " + Input_dollars + " - Size - " + Input_length + " - Cents - " + Input_cents;
-                } else {
-                    Output = "Number is a float - " + Input_processing + " - Size - " + Input_length;
-                }*/
+                    if (counter % 3 == 0) {
+                        // small number combined with large number
+                    } else if (counter % 3 == 2) {
+                        // medium numbers
+                    } else if (counter % 3 == 1) {
+                        // small numbers
+                    }
+                }
+
+
+
 
                 Output  = "Number is a float - " + InputProcessing + " - Size - " + Input_length + " - Type - " + ConversionType;
 
