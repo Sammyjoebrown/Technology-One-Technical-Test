@@ -94,32 +94,31 @@ namespace Technology_One_Technical_Test.Pages
                     for (int j = 0; j < InputBeforePointArray[i].Length; j++) {
                         if (InputBeforePointArray[i].Length == 3 && j == 0) {
                             // Hundreds case
-                            Output += InputBeforePointArray[i][j] + " " + large_numbers[j];
+                            Output += small_numbers[InputBeforePointArray[i][j] - 1] + " " + large_numbers[0] + " ";
                         }
-                        else if (InputBeforePointArray[i].Length == 2) {
-                            // Tens case
-                            if (j == 0) {
+                        else if (InputBeforePointArray[i].Length == 2 && j == InputBeforePointArray[i].Length - 2) {
+                            // Teens and tys case
 
-                                if (InputBeforePointArray[i][j] == 1) {
-                                    Output += medium_teen_numbers[j];
-                                }
-                                else if (InputBeforePointArray[i][j] > 1) {
-                                    Output += medium_ty_numbers[j];
-                                }
-
-                                Output += medium_ty_numbers[j];
+                            if (InputBeforePointArray[i][j] == 1) {
+                                Output += medium_teen_numbers[InputBeforePointArray[i][j + 1]] + " ";
+                                break; // Break here because one is part of a teen number
                             }
-                            else {
-                                Output += small_numbers[j];
+                            else if (InputBeforePointArray[i][j] > 1) {
+                                Output += medium_ty_numbers[InputBeforePointArray[i][j] - 2] + " ";
                             }
                         }
-                        else if (InputBeforePointArray[i].Length == 1) {
-                            // Ones case
-                            Output += small_numbers[j];
+                        else if (InputBeforePointArray[i].Length == 1 && j == InputBeforePointArray[i].Length - 1) {
+                            // Ones case (must be greater than 0)
+                            if (InputBeforePointArray[i][j] > 0) {
+                                Output += small_numbers[InputBeforePointArray[i][j] - 1] + " ";
+                            }
                         }
                     }
+                    if (i > 0 && i < large_numbers.Length) {
+                        Output += large_numbers[i] + " ";
+                    }
                 }
-
+                /*
                 Output = "Hello! ";
                 for (int i = 0; i < InputBeforePointArray.Length; i++)
                 {
@@ -137,7 +136,7 @@ namespace Technology_One_Technical_Test.Pages
                     {
                         Output += ", ";
                     }
-                }
+                }*/
 
 
             } else {
