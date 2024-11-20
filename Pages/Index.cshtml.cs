@@ -7,8 +7,6 @@ namespace Technology_One_Technical_Test.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
-        // Testing displaying text on the web page that is set in the C# code
-        public string Test { get; set; }
         public string Output { get; set; }
         public string Input { get; set; }
         public string ConversionType { get; set; }
@@ -16,7 +14,6 @@ namespace Technology_One_Technical_Test.Pages
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
-            Test = "Hey - I'm made in the C# code!";
             Output = "";
         }
 
@@ -168,8 +165,9 @@ namespace Technology_One_Technical_Test.Pages
                 }
 
                 Output = Output.ToUpper();
+                Output = "Output: " + Output;
             } else {
-                Output = "Number is not a float - " + InputProcessing + " - Size - " + InputProcessing.ToString().Length + " - Type - " + ConversionType;
+                Output = "Input is not a decimal - " + InputProcessing + " - Size - " + InputProcessing.ToString().Length + " - Type - " + ConversionType;
             }
 
         }

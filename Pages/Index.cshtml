@@ -9,7 +9,6 @@
     <br>
     <p class="lead">Please enter a number and click 'Convert' to see the number as an Australian Dollar amount in words.</p>
     <br>
-    <p class="lead">@Model.Test</p>
     <form method="post">
         <div class="row justify-content-center">
             <input type="text" class="col-3 mx-4" placeholder="Enter value here" name="Input" asp-for="Input">
@@ -25,5 +24,24 @@
         </div>
     </form>
     <br>
-    <p class="lead">@Model.Output</p>
+    @if (Model.Output.Contains("Output: "))
+    {
+        <div class="container">
+            <div class="alert alert-success" role="alert">
+                <p class="lead">The @Model.ConversionType value was Successfully Converted to:</p>
+                <p class="lead">@Model.Output</p>
+            </div>
+        </div>
+    }
+    <!--If model output contains the words 'not a float' then display an error message-->
+    @if (Model.Output.Contains("not a float"))
+    {
+        <div class="container">
+            <div class="alert alert-danger" role="alert">
+                <p class="lead">An Error was Encountered converting the @Model.ConversionType Value to Words:</p>
+                <p class="lead">@Model.Output</p>
+            </div>
+        </div>
+    }
+
 </div>
