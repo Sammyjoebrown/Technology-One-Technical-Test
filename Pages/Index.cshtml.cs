@@ -46,7 +46,7 @@ namespace Technology_One_Technical_Test.Pages
             string[] medium_teen_numbers = { "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
             string[] small_numbers = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
 
-            if (float.TryParse(Input, out float InputProcessing)) {
+            if (decimal.TryParse(Input, out decimal InputProcessing)) {
                 
                 // Get length of input
                 int Input_length = InputProcessing.ToString().Length;
@@ -124,72 +124,50 @@ namespace Technology_One_Technical_Test.Pages
                 }
 
                 if (ConversionType == "Dollar") {
-                    Output += "Dollars and ";
+                    Output += "Dollars";
+                    if (InputAfterPointLength > 0) {
+                        Output += " and ";
+                    }
                 } 
-                else if(ConversionType == "Number") {
-                    Output += "point ";
-                }
 
-                // After decimal point
+                // After decimal point (implementing a rounding system for dollar conversion and keeping it regular for number conversion)
                 if (InputAfterPointLength > 0) {
-                    int[][] InputAfterPointArray = new int[(int)Math.Ceiling(InputAfterPointLength / 3.0)][];
-                    tripletIndex = 0;
-                    for (int i = InputAfterPointLength; i > 0; i -= 3) {
-                        int index = Math.Max(0, i - 3);
-                        string triplet = InputAfterPoint.Substring(index, i - index);
+                    if (ConversionType == "Dollar") {
+                        // Round to two decimal places for dollar conversion
+                        decimal roundedDecimal = (decimal)(Math.Round(InputProcessing - (int)InputProcessing, 2) * 100);
+                        int cents = (int)roundedDecimal;
 
-                        int[] tripletArray = new int[triplet.Length];
-                        for (int j = 0; j < triplet.Length; j++) {
-                            tripletArray[j] = int.Parse(triplet[j].ToString());
-                        }
-                        InputAfterPointArray[tripletIndex] = tripletArray;
+                        // Cents into tens and ones for rounding (common & efficient for finance)
+                        int tens = cents / 10;
+                        int ones = cents % 10;
 
-                        tripletIndex++;
-                    }
-
-                    // Array needs to be reversed to be in the correct order (which the number was inputted in)
-                    Array.Reverse(InputAfterPointArray);
-
-                    for (int i = 0; i < InputAfterPointArray.Length; i++) {
-                        if (InputAfterPointArray[i] == null) {
-                            continue;;
+                        if (tens == 1) {
+                            // Teens case
+                            Output += medium_teen_numbers[ones] + " "; // Teens deals with both tens and ones
+                        } else {
+                            if (tens > 1) {
+                                Output += medium_ty_numbers[tens - 2] + " "; // Tys
                             }
-                        for (int j = 0; j < InputAfterPointArray[i].Length; j++) {
-                            if (InputAfterPointArray[i].Length == 3 && j == 0) {
-                                // Hundreds case
-                                if (InputAfterPointArray[i][j] > 0) { // If the number in the hundreds place is not 0 - if it is, ignore
-                                    Output += small_numbers[InputAfterPointArray[i][j] - 1] + " " + large_numbers[0] + " and ";
-                                }
-                            } 
-                            else if (InputAfterPointArray[i].Length >= 2 && j == InputAfterPointArray[i].Length - 2) {
-                                // Teens and Tys case
-                                if (InputAfterPointArray[i][j] == 1) { // If first number is 1, it's a teen number
-                                    Output += medium_teen_numbers[InputAfterPointArray[i][j + 1]] + " ";
-                                    break; // Break here because numbers 2 and 3 in the triplet are processed as a teen number
-                                } 
-                                else if (InputAfterPointArray[i][j] > 1) {
-                                    // Tens
-                                    Output += medium_ty_numbers[InputAfterPointArray[i][j] - 2] + " ";
-                                }
-                            } 
-                            else if (InputAfterPointArray[i].Length >= 1 && j == InputAfterPointArray[i].Length - 1) {
-                                // Ones case
-                                if (InputAfterPointArray[i][j] > 0) {
-                                    Output += small_numbers[InputAfterPointArray[i][j] - 1] + " ";
-                                }
+                            if (ones > 0) {
+                                Output += small_numbers[ones - 1] + " "; // Ones
                             }
                         }
-
-                        // Each finished processed triplet should have a large number (unless it's the last one)
-                        if (i < InputAfterPointArray.Length - 1 && i < large_numbers.Length) {
-                            Output += large_numbers[InputAfterPointArray.Length - 1 - i] + " ";
+                        Output += "cents";
+                    } 
+                    else if (ConversionType == "Number") {
+                        // General number conversion uses only small numbers after the decimal point
+                        Output += "point ";
+                        foreach (char digit in InputAfterPoint) {
+                            if (digit >= '1' && digit <= '9') {
+                                Output += small_numbers[digit - '1'] + " ";
+                            } else if (digit == '0') {
+                                Output += "zero ";
+                            }
                         }
                     }
                 }
-                if (ConversionType == "Dollar") {
-                    Output += "Cents";
-                }
 
+                Output = Output.ToUpper();
             } else {
                 Output = "Number is not a float - " + InputProcessing + " - Size - " + InputProcessing.ToString().Length + " - Type - " + ConversionType;
             }
