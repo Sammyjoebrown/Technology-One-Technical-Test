@@ -94,50 +94,101 @@ namespace Technology_One_Technical_Test.Pages
                     for (int j = 0; j < InputBeforePointArray[i].Length; j++) {
                         if (InputBeforePointArray[i].Length == 3 && j == 0) {
                             // Hundreds case
-                            Output += small_numbers[InputBeforePointArray[i][j] - 1] + " " + large_numbers[0] + " ";
-                        }
-                        else if (InputBeforePointArray[i].Length == 2 && j == InputBeforePointArray[i].Length - 2) {
-                            // Teens and tys case
-
-                            if (InputBeforePointArray[i][j] == 1) {
-                                Output += medium_teen_numbers[InputBeforePointArray[i][j + 1]] + " ";
-                                break; // Break here because one is part of a teen number
+                            if (InputBeforePointArray[i][j] > 0) { // If the number in the hundreds place is not 0 - if it is, ignore
+                                Output += small_numbers[InputBeforePointArray[i][j] - 1] + " " + large_numbers[0] + " and ";
                             }
+                        } 
+                        else if (InputBeforePointArray[i].Length >= 2 && j == InputBeforePointArray[i].Length - 2) {
+                            // Teens and Tys case
+                            if (InputBeforePointArray[i][j] == 1) { // If first number is 1, it's a teen number
+                                Output += medium_teen_numbers[InputBeforePointArray[i][j + 1]] + " ";
+                                break; // Break here because numbers 2 and 3 in the triplet are processed as a teen number
+                            } 
                             else if (InputBeforePointArray[i][j] > 1) {
+                                // Tens
                                 Output += medium_ty_numbers[InputBeforePointArray[i][j] - 2] + " ";
                             }
-                        }
-                        else if (InputBeforePointArray[i].Length == 1 && j == InputBeforePointArray[i].Length - 1) {
-                            // Ones case (must be greater than 0)
+                        } 
+                        else if (InputBeforePointArray[i].Length >= 1 && j == InputBeforePointArray[i].Length - 1) {
+                            // Ones case
                             if (InputBeforePointArray[i][j] > 0) {
                                 Output += small_numbers[InputBeforePointArray[i][j] - 1] + " ";
                             }
                         }
                     }
-                    if (i > 0 && i < large_numbers.Length) {
-                        Output += large_numbers[i] + " ";
+
+                    // Each finished processed triplet should have a large number (unless it's the last one)
+                    if (i < InputBeforePointArray.Length - 1 && i < large_numbers.Length) {
+                        Output += large_numbers[InputBeforePointArray.Length - 1 - i] + " ";
                     }
                 }
-                /*
-                Output = "Hello! ";
-                for (int i = 0; i < InputBeforePointArray.Length; i++)
-                {
-                    Output += "[";
-                    for (int j = 0; j < InputBeforePointArray[i].Length; j++)
-                    {
-                        Output += InputBeforePointArray[i][j];
-                        if (j < InputBeforePointArray[i].Length - 1)
-                        {
-                            Output += ", ";
+
+                if (ConversionType == "Dollar") {
+                    Output += "Dollars and ";
+                } 
+                else if(ConversionType == "Number") {
+                    Output += "point ";
+                }
+
+                // After decimal point
+                if (InputAfterPointLength > 0) {
+                    int[][] InputAfterPointArray = new int[(int)Math.Ceiling(InputAfterPointLength / 3.0)][];
+                    tripletIndex = 0;
+                    for (int i = InputAfterPointLength; i > 0; i -= 3) {
+                        int index = Math.Max(0, i - 3);
+                        string triplet = InputAfterPoint.Substring(index, i - index);
+
+                        int[] tripletArray = new int[triplet.Length];
+                        for (int j = 0; j < triplet.Length; j++) {
+                            tripletArray[j] = int.Parse(triplet[j].ToString());
+                        }
+                        InputAfterPointArray[tripletIndex] = tripletArray;
+
+                        tripletIndex++;
+                    }
+
+                    // Array needs to be reversed to be in the correct order (which the number was inputted in)
+                    Array.Reverse(InputAfterPointArray);
+
+                    for (int i = 0; i < InputAfterPointArray.Length; i++) {
+                        if (InputAfterPointArray[i] == null) {
+                            continue;;
+                            }
+                        for (int j = 0; j < InputAfterPointArray[i].Length; j++) {
+                            if (InputAfterPointArray[i].Length == 3 && j == 0) {
+                                // Hundreds case
+                                if (InputAfterPointArray[i][j] > 0) { // If the number in the hundreds place is not 0 - if it is, ignore
+                                    Output += small_numbers[InputAfterPointArray[i][j] - 1] + " " + large_numbers[0] + " and ";
+                                }
+                            } 
+                            else if (InputAfterPointArray[i].Length >= 2 && j == InputAfterPointArray[i].Length - 2) {
+                                // Teens and Tys case
+                                if (InputAfterPointArray[i][j] == 1) { // If first number is 1, it's a teen number
+                                    Output += medium_teen_numbers[InputAfterPointArray[i][j + 1]] + " ";
+                                    break; // Break here because numbers 2 and 3 in the triplet are processed as a teen number
+                                } 
+                                else if (InputAfterPointArray[i][j] > 1) {
+                                    // Tens
+                                    Output += medium_ty_numbers[InputAfterPointArray[i][j] - 2] + " ";
+                                }
+                            } 
+                            else if (InputAfterPointArray[i].Length >= 1 && j == InputAfterPointArray[i].Length - 1) {
+                                // Ones case
+                                if (InputAfterPointArray[i][j] > 0) {
+                                    Output += small_numbers[InputAfterPointArray[i][j] - 1] + " ";
+                                }
+                            }
+                        }
+
+                        // Each finished processed triplet should have a large number (unless it's the last one)
+                        if (i < InputAfterPointArray.Length - 1 && i < large_numbers.Length) {
+                            Output += large_numbers[InputAfterPointArray.Length - 1 - i] + " ";
                         }
                     }
-                    Output += "]";
-                    if (i < InputBeforePointArray.Length - 1)
-                    {
-                        Output += ", ";
-                    }
-                }*/
-
+                }
+                if (ConversionType == "Dollar") {
+                    Output += "Cents";
+                }
 
             } else {
                 Output = "Number is not a float - " + InputProcessing + " - Size - " + InputProcessing.ToString().Length + " - Type - " + ConversionType;
