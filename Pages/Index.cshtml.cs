@@ -38,7 +38,7 @@ namespace Technology_One_Technical_Test.Pages
             // If the number is a regular number, add the point to the end if there is a decimal part (should be done after calculation)
 
             // A very rough outline of how I would approach the problem (it's only day 1 after all)
-            string[] large_numbers = { "hundred", "thousand", "million", "billion", "trillion" };
+            string[] large_numbers = { "hundred", "thousand", "million", "billion", "trillion", "quadrillion", "quintillion", "sextillion", "septillion", "octillion", "nonillion", "decillion" };
             string[] medium_ty_numbers = { "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" };
             string[] medium_teen_numbers = { "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
             string[] small_numbers = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
@@ -131,7 +131,7 @@ namespace Technology_One_Technical_Test.Pages
                 if (InputAfterPointLength > 0) {
                     if (ConversionType == "Dollar") {
                         // Round to two decimal places for dollar conversion
-                        decimal roundedDecimal = (decimal)(Math.Round(InputProcessing - (int)InputProcessing, 2) * 100);
+                        decimal roundedDecimal = (decimal)(Math.Round(InputProcessing - (decimal)InputProcessing, 2) * 100); // Needs to be decimal not int to fix Int32 size constraint bug
                         int cents = (int)roundedDecimal;
 
                         // Cents into tens and ones for rounding (common & efficient for finance)
