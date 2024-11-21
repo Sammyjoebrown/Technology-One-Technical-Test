@@ -131,8 +131,9 @@ namespace Technology_One_Technical_Test.Pages
                 if (InputAfterPointLength > 0) {
                     if (ConversionType == "Dollar") {
                         // Round to two decimal places for dollar conversion
-                        decimal roundedDecimal = (decimal)(Math.Round(InputProcessing - (decimal)InputProcessing, 2) * 100); // Needs to be decimal not int to fix Int32 size constraint bug
-                        int cents = (int)roundedDecimal;
+                        decimal fractionalPart = InputProcessing - Math.Truncate(InputProcessing); // Get the fractional part of the number by subtracting the whole number
+                        int cents = (int)Math.Round(fractionalPart * 100); // Fixing a bug which does not process the cents correctly for >billion numbers
+
 
                         // Cents into tens and ones for rounding (common & efficient for finance)
                         int tens = cents / 10;
