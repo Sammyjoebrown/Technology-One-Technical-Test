@@ -26,3 +26,6 @@ Now I am integrating the existing index.html I made into the 'Pages' folder of m
             // If the number is a regular number, add the point to the end if there is a decimal part (should be done after calculation)
 
             // A very rough outline of how I would approach the problem (it's only day 1 after all)
+
+
+Technology-One-Technical-Test\bin\Release\net9.0\win-x64\publish\Technology-One-Technical-Test.exe Is the path of the executable

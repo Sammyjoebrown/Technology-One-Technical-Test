@@ -1,3 +1,5 @@
+using Microsoft.VisualBasic;
+
 namespace Technology_One_Tech_Test.Logic
 {
     public class Converter
@@ -55,21 +57,36 @@ namespace Technology_One_Tech_Test.Logic
                 Array.Reverse(InputBeforePointArray);
 
                 for (int i = 0; i < InputBeforePointArray.Length; i++) {
+                    bool hasZeroValue = true;
+                    bool addAnd = false; // Adding ands dynamically & programatically
                     for (int j = 0; j < InputBeforePointArray[i].Length; j++) {
+                        if (InputBeforePointArray[i][j] != 0) { // Fixes an issue where 1000000000 would hit all conditions for large numbers and output 'ONE BILLION MILLION THOUSAND'
+                            hasZeroValue = false;
+                        }
+
                         if (InputBeforePointArray[i].Length == 3 && j == 0) {
                             // Hundreds case
                             if (InputBeforePointArray[i][j] > 0) { // If the number in the hundreds place is not 0 - if it is, ignore
-                                Output += small_numbers[InputBeforePointArray[i][j] - 1] + " " + large_numbers[0] + " and ";
+                                Output += small_numbers[InputBeforePointArray[i][j] - 1] + " " + large_numbers[0] + " ";
+                                addAnd = true;
                             }
                         } 
                         else if (InputBeforePointArray[i].Length >= 2 && j == InputBeforePointArray[i].Length - 2) {
                             // Teens and Tys case
                             if (InputBeforePointArray[i][j] == 1) { // If first number is 1, it's a teen number
+                                if (addAnd) {
+                                    Output += "and ";
+                                    addAnd = false; // Add an 'and' once per triplet then reset for next one
+                                }
                                 Output += medium_teen_numbers[InputBeforePointArray[i][j + 1]] + " ";
                                 break; // Break here because numbers 2 and 3 in the triplet are processed as a teen number
                             } 
                             else if (InputBeforePointArray[i][j] > 1) {
                                 // Tens
+                                if (addAnd) {
+                                    Output += "and ";
+                                    addAnd = false; // Add an 'and' once per triplet then reset for next one
+                                }
                                 Output += medium_ty_numbers[InputBeforePointArray[i][j] - 2] + " ";
                             }
                         } 
@@ -82,7 +99,7 @@ namespace Technology_One_Tech_Test.Logic
                     }
 
                     // Each finished processed triplet should have a large number (unless it's the last one)
-                    if (i < InputBeforePointArray.Length - 1 && i < large_numbers.Length) {
+                    if (!hasZeroValue && i < InputBeforePointArray.Length - 1 && i < large_numbers.Length) {
                         Output += large_numbers[InputBeforePointArray.Length - 1 - i] + " ";
                     }
                 }
@@ -102,6 +119,12 @@ namespace Technology_One_Tech_Test.Logic
                         Output += " and ";
                     }
                 } 
+
+                if (ConversionType == "Number") {
+                    if (Math.Truncate(InputProcessing) < 1) {
+                        Output += "Zero ";
+                    }
+                }
 
                 // After decimal point (implementing a rounding system for dollar conversion and keeping it regular for number conversion)
                 if (InputAfterPointLength > 0) {
@@ -126,7 +149,11 @@ namespace Technology_One_Tech_Test.Logic
                                 Output += small_numbers[ones - 1] + " "; // Ones
                             }
                         }
-                        Output += "cents";
+                        if (cents == 1) {
+                            Output += "Cent";
+                        } else if (cents > 1) {
+                            Output += "Cents";
+                        }
                     } 
                     else if (ConversionType == "Number") {
                         // General number conversion uses only small numbers after the decimal point
@@ -143,6 +170,7 @@ namespace Technology_One_Tech_Test.Logic
 
                 Output = Output.ToUpper();
                 Output = "Output: " + Output;
+                Output = Output.Trim();
             } else {
                 Output = "Input is not a decimal - " + Input + " - Type - " + ConversionType;
             }
