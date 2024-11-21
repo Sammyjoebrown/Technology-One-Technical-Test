@@ -13,3 +13,16 @@ dotnet new webapp
 This created the files and folders necessary to make a standard Microsoft .NET web application (all default and requiring customisation)
 Always have to check the application is running correctly by using dotnet run (all is fine)
 Now I am integrating the existing index.html I made into the 'Pages' folder of my newly created .NET web app
+
+
+// Validation stages - Sam's Initial Plan
+            // Check if input can be parsed as float - else error
+            // Determine if the input should be presented as a dollar or a regular integer decimal (toggle)
+            // If number can be parsed as a float, parse as a string and find how many characters are before and after the decimal point
+            // Set three arrays - one for big numbers (hundreds, thousands, millions), one for medium numbers (teens) and one for small numbers (ones)
+            // Iterate through the string, adding the appropriate number to the output string
+            // Set rules for after every hundred, there should be an and
+            // If the number is a dollar amount, add the word dollars to the end, and cents to the very end for the decimal part (should be done after calculation)
+            // If the number is a regular number, add the point to the end if there is a decimal part (should be done after calculation)
+
+            // A very rough outline of how I would approach the problem (it's only day 1 after all)

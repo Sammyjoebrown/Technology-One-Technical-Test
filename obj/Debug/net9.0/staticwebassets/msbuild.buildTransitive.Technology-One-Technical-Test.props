@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\Technology-One-Technical-Test.props" />
-</Project>

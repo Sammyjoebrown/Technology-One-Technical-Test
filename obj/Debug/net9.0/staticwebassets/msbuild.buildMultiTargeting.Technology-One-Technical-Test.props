@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Technology-One-Technical-Test.props" />
-</Project>
