@@ -1,0 +1,4 @@
+C:\Users\Sammy B\Desktop\Technology One\Technology One Technical Test\Technology-One-Technical-Test\bin\Release\net9.0\win-x64\publish\appsettings.Development.json
+C:\Users\Sammy B\Desktop\Technology One\Technology One Technical Test\Technology-One-Technical-Test\bin\Release\net9.0\win-x64\publish\appsettings.json
+C:\Users\Sammy B\Desktop\Technology One\Technology One Technical Test\Technology-One-Technical-Test\bin\Release\net9.0\win-x64\publish\Technology-One-Technical-Test.pdb
+C:\Users\Sammy B\Desktop\Technology One\Technology One Technical Test\Technology-One-Technical-Test\bin\Release\net9.0\win-x64\publish\Technology-One-Technical-Test.exe

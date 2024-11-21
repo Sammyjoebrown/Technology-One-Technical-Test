@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "B8WmZ+JHxy8=",
+  "dgSpecHash": "JErncolll8Q=",
   "success": true,
   "projectFilePath": "C:\\Users\\Sammy B\\Desktop\\Technology One\\Technology One Technical Test\\Technology-One-Technical-Test\\Technology-One-Technical-Test.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Sammy B\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.0\\microsoft.net.illink.tasks.9.0.0.nupkg.sha512",
+    "C:\\Users\\Sammy B\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\9.0.0\\microsoft.netcore.app.runtime.win-x64.9.0.0.nupkg.sha512",
+    "C:\\Users\\Sammy B\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\9.0.0\\microsoft.windowsdesktop.app.runtime.win-x64.9.0.0.nupkg.sha512",
+    "C:\\Users\\Sammy B\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\9.0.0\\microsoft.aspnetcore.app.runtime.win-x64.9.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
