@@ -53,9 +53,9 @@ In implementation, I refined this approach to dynamically handle large numbers, 
 git clone https://github.com/Sammyjoebrown/Technology-One-Technical-Test
 cd Technology-One-Technical-Test
 ```
-OR, clone the repository using Visual Studio / VS Code's build-in GitHub functionalities [using this URL](https://github.com/Sammyjoebrown/Technology-One-Technical-Test)
+OR, clone the repository using Visual Studio / VS Code's build-in GitHub functionalities [using this URL](https://github.com/Sammyjoebrown/Technology-One-Technical-Test) (If cloning to Visual Studio, select the 'Open with Visual Studio' button beneath the green code dropdown)
 
-2. Once the repository has been cloned, open it in an IDE / Code Editor of your choice (for example, VS Code), and run the application using 
+2. Once the repository has been cloned, open it in an IDE / Code Editor of your choice (for example, VS Code), open a Command Prompt instance, and run the application using 
 ```cs
 dotnet build
 dotnet watch run
