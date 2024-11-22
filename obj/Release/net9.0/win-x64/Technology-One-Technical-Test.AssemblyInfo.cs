@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Technology-One-Technical-Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46365a69fda76226b7ee692fbe31f79d20fb1040")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f701c1cc60475a2051bc758ddf3bb8c70197e591")]
 [assembly: System.Reflection.AssemblyProductAttribute("Technology-One-Technical-Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Technology-One-Technical-Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

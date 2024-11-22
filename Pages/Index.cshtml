@@ -12,14 +12,18 @@
     <form method="post">
         <div class="row justify-content-center">
             <input type="text" class="col-3 mx-4" placeholder="Enter value here" name="Input" asp-for="Input">
-
-            <input type="radio" class="btn-check rounded col-1 mx-2" name="ConversionType" id="ConvertToNumber" value="Number" asp-for="ConversionType" checked>
-            <label class="btn btn-outline-dark col-1 mx-2" for="ConvertToNumber">Convert to Number</label>
-
-            <input type="radio" class="btn-check rounded col-1 mx-2" name="ConversionType" id="ConvertToDollar" value="Dollar" asp-for="ConversionType">
-            <label class="btn btn-outline-dark col-1 mx-2" for="ConvertToDollar">Convert to Dollar</label>
-
-            <button class="btn btn-warning rounded rounded-pill col-2 mx-3">Convert to String</button>
+            
+            <div class="col-2">
+                <input type="radio" class="" name="ConversionType" id="ConvertToNumber" value="Number" asp-for="ConversionType" checked>
+                <label class="" for="ConvertToNumber">Convert to Number</label>
+            </div>
+            
+            <div class="col-2">
+                <input type="radio" class="" name="ConversionType" id="ConvertToDollar" value="Dollar" asp-for="ConversionType">
+                <label class="" for="ConvertToDollar">Convert to Dollar</label>
+            </div>
+            
+            <button class="btn btn-warning rounded rounded-pill col-2 mx-3">Convert my Input</button>
 
         </div>
     </form>

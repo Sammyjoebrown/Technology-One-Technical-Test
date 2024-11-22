@@ -34,14 +34,13 @@ In implementation, I refined this approach to dynamically handle large numbers, 
 ## How to Run the Application
 
 ### Running the .exe
-1. Download the repository as a ZIP file and extract it.
+1. Download the repository as a ZIP file by clicking on the green 'Code' dropdown, and extract it in your File Explorer.
 2. Navigate to the path: "Technology-One-Technical-Test\bin\Release\net9.0\win-x64\publish\"
-3. Double-click on `Technology-One-Technical-Test.exe` to run the application.
+#### Please make sure you are opening the .exe inside the 'publish' path; otherwise there may be CSS loading / formatting issues for the web page.
+3. Double-click on `Technology-One-Technical-Test.exe` to run the application. If the .exe is blocked by Windows Defender, please click 'More Info', then 'Run'. Otherwise, running the program as an Administrator will solve this issue - however I understand this may make some people uncomfortable.
 4. The .exe file should open the command prompt, which will show the application is running on a localhost instance. Copy the localhost link, and paste into a browser to use the application.
     - Ensure the machine is running Windows 10 or 11
     - No additional dependencies (such as the .NET framework) are required, as the executable is self-contained.
-
-    Running the Application in a .NET Environment
 
 
 ### Running the Application in a .NET Environment
